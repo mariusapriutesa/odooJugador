@@ -71,3 +71,30 @@ class jugador(models.Model):
             if (len(jugador.dniJugador) < 9):
                 raise exceptions.ValidationError("El DNI no puede tener menos 9 caracteres")
 
+class torneo(models.Model):
+     _name = 'jugador.torneo'
+     _description = 'Define los atributos de un torneo'
+
+     #Atributos
+     nombreTorneo = fields.Char(string='Nombre torneo', required=True)
+     tipoTorneo = fields.Selection(string='Tipo de torneo', selection=[('L','Local'),('I','Internacional')], help='Tipo de torneo al que se esta destinando' )
+     descripcionTorneo= fields.Text(string='Descripcion del torneo')
+     fechaInicio = fields.Date(string='Fecha de Inicio', required=True)
+     fechaFin = fields.Date(string='Fecha de fin', required=True)
+     #dias = fields.Integer(string='Dias')
+     #Relacion entre tablas
+     jugador_id = fields.Many2many('jugador.jugador', string='Jugadores')
+
+     @api.constrains('fechaFin')
+     def _checkFechaFin(self):
+         for proyecto in self:
+             if relativedelta(proyecto.fechaInicio, proyecto.fechaFin).days > 0:
+                 raise exceptions.ValidationError("La fecha de fin no puede ser inferior a la fecha de inicio")
+     
+     @api.constrains('fechaInicio')
+     def _checkFechaInicio(self):
+         hoy = date.today()
+         for proyecto in self:
+             diasCalculados = relativedelta(hoy, proyecto.fechaInicio).days
+             if ( diasCalculados > 0):
+                 raise exceptions.ValidationError("La fecha no puede ser anterior a la fecha actual")
