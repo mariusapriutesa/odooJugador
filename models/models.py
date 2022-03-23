@@ -48,7 +48,7 @@ class jugador(models.Model):
 
     #Relacion de tablas
     equipo_id = fields.Many2one('jugador.equipo', string='Equipo')
-    Turneos_ids = fields.Many2many('jugador.turneo', string='Turneos')
+    Torneos_ids = fields.Many2many('jugador.torneo', string='Torneos')
 
 
     @api.depends('fechaNacimiento')
@@ -87,14 +87,14 @@ class torneo(models.Model):
 
      @api.constrains('fechaFin')
      def _checkFechaFin(self):
-         for turneo in self:
-             if relativedelta(turneo.fechaInicio, turneo.fechaFin).days > 0:
+         for torneo in self:
+             if relativedelta(torneo.fechaInicio, torneo.fechaFin).days > 0:
                  raise exceptions.ValidationError("La fecha de fin no puede ser inferior a la fecha de inicio")
      
      @api.constrains('fechaInicio')
      def _checkFechaInicio(self):
          hoy = date.today()
-         for turneo in self:
-             diasCalculados = relativedelta(hoy, turneo.fechaInicio).days
+         for torneo in self:
+             diasCalculados = relativedelta(hoy, torneo.fechaInicio).days
              if ( diasCalculados > 0):
                  raise exceptions.ValidationError("La fecha no puede ser anterior a la fecha actual")

@@ -128,15 +128,15 @@
 </tree>
 </field>
 </record>
-<!--  VISTA TURNEO  -->
-<record model="ir.ui.view" id="jugador.turneo_list_view">
-<field name="name">jugador.turneo.view.tree</field>
-<field name="model">jugador.turneo</field>
+<!--  VISTA TORNEO  -->
+<record model="ir.ui.view" id="jugador.torneo_list_view">
+<field name="name">jugador.torneo.view.tree</field>
+<field name="model">jugador.torneo</field>
 <field name="arch" type="xml">
 <tree>
-<field name="nombreTurneo"/>
-<field name="tipoTurneo"/>
-<field name="descripcionTurneo"/>
+<field name="nombreTorneo"/>
+<field name="tipoTorneo"/>
+<field name="descripcionTorneo"/>
 <field name="fechaInicio"/>
 <field name="fechaFin"/>
 </tree>
@@ -152,14 +152,14 @@
 <field name="res_model">jugador.equipo</field>
 <field name="view_mode">tree,form</field>
 </record>
-<record model="ir.actions.act_window" id="jugador.turneo_action_window">
-<field name="name">Turneos</field>
-<field name="res_model">jugador.turneo</field>
+<record model="ir.actions.act_window" id="jugador.torneo_action_window">
+<field name="name">Torneos</field>
+<field name="res_model">jugador.torneo</field>
 <field name="view_mode">tree,form</field>
 </record>
-<menuitem name="Turneos" id="jugador.menu_root" web_icon="jugador,static/description/icon.png"/>
+<menuitem name="Torneos" id="jugador.menu_root" web_icon="jugador,static/description/icon.png"/>
 <menuitem name="Jugadores" id="jugador.jugador_menu" parent="jugador.menu_root" action="jugador.jugador_action_window"/>
 <menuitem name="Equipo" id="jugador.equipo_menu" parent="jugador.menu_root" action="jugador.equipo_action_window"/>
-<menuitem name="Turneos" id="jugador.turneo_menu" parent="jugador.menu_root" action="jugador.turneo_action_window"/>
+<menuitem name="Torneos" id="jugador.torneo_menu" parent="jugador.menu_root" action="jugador.torneo_action_window"/>
 </data>
 </odoo>
