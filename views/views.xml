@@ -124,7 +124,7 @@
 <field name="model">jugador.equipo</field>
 <field name="arch" type="xml">
 <tree>
-<field name="nombreDpto"/>
+<field name="nombreEquipo"/>
 </tree>
 </field>
 </record>
