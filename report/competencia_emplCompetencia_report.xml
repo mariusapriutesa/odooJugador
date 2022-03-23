@@ -1,5 +1,5 @@
 <odoo>
-<record id="jugador.emplCompetencia_report" model="ir.actions.report">
+<record id="competencia.emplCompetencia_report" model="ir.actions.report">
 <field name="name">Informe competencia</field>
 <field name="model">jugador.competencia</field>
 <field name="report_type">qweb-pdf</field>
