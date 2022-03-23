@@ -18,12 +18,12 @@
 #             record.value2 = float(record.value) / 100
 
 from odoo import models, fields, api
-class echipo(models.Model):
+class equipo(models.Model):
     _name = 'jugador.equipo'
     _description = 'Define los atributos de un equipo'
 
     # Atributos
-    nombreEchipo = fields.Char(string='Nombre equipo', required=True)
+    nombreEquipo = fields.Char(string='Nombre equipo', required=True)
 
     #Relacion entre tablas
     jugador_id = fields.One2many('jugador.jugador','equipo_id', string='Equipo')
@@ -47,7 +47,7 @@ class jugador(models.Model):
     edad = fields.Integer('Edad', compute='_getEdad')
 
     #Relacion de tablas
-    echipo_id = fields.Many2one('jugador.echipo', string='Echipo')
+    equipo_id = fields.Many2one('jugador.equipo', string='Equipo')
     jugadores_ids = fields.Many2many('jugador.jugadores', string='Jugador')
 
 
