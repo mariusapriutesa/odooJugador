@@ -56,10 +56,10 @@
     <menuitem name="Server to list" id="jugador" parent="jugador.menu_2"
               action="jugador.action_server"/>
 -->
- <record model="ir.ui.view" id="jugador.list">
-      <field name="name">jugador list</field>
-      <field name="model">jugador.jugador</field>
-      <field name="arch" type="xml">
+ <record model="ir.ui.view" id="jugador.empleado_list_view">
+<field name="name">jugador.empleado.view.tree</field>
+<field name="model">jugador.empleado</field>
+<field name="arch" type="xml">
 <tree>
 <field name="dniEmpleado"/>
 <field name="nombreEmpleado"/>
