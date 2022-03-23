@@ -56,5 +56,110 @@
     <menuitem name="Server to list" id="jugador" parent="jugador.menu_2"
               action="jugador.action_server"/>
 -->
-  </data>
+ <record model="ir.ui.view" id="jugador.list">
+      <field name="name">jugador list</field>
+      <field name="model">jugador.jugador</field>
+      <field name="arch" type="xml">
+<tree>
+<field name="dniJugador"/>
+<field name="nombreJugador"/>
+<field name="fechaNacimiento"/>
+<field name="direccionJugador"/>
+<field name="telefonoJugador"/>
+</tree>
+</field>
+</record>
+<!--  VISTA JUGADORES FORMULARIO  -->
+<record model="ir.ui.view" id="jugador.jugador_view">
+<field name="name">jugador.jugador.view</field>
+<field name="model">jugador.jugador</field>
+<field name="arch" type="xml">
+<form>
+<sheet>
+<div class="oe_button_box">
+<BUTTONS/>
+</div>
+<group>
+<group>
+<h1>VISTA JUGADORES</h1>
+</group>
+</group>
+<notebook>
+<page string="Page1">
+<group col="3">
+<group>
+<field name="dniJugador" style="width:70%%"/>
+</group>
+<group>
+<field name="nombreJugador" style="width:170%%"/>
+</group>
+</group>
+<group col="2">
+<group>
+<field name="direccionJugador"/>
+</group>
+</group>
+<group col="3">
+<group>
+<field name="fechaNacimiento"/>
+</group>
+<group>
+<field name="telefonoJugador"/>
+</group>
+</group>
+</page>
+<page string="Page2">
+<group>
+<CONTENT/>
+</group>
+</page>
+</notebook>
+</sheet>
+</form>
+</field>
+</record>
+<!--  VISTA EQUIPO  -->
+<record model="ir.ui.view" id="jugador.equipo_list_view">
+<field name="name">jugador.equipo.view.tree</field>
+<field name="model">jugador.equipo</field>
+<field name="arch" type="xml">
+<tree>
+<field name="nombreDpto"/>
+</tree>
+</field>
+</record>
+<!--  VISTA TURNEO  -->
+<record model="ir.ui.view" id="jugador.turneo_list_view">
+<field name="name">jugador.turneo.view.tree</field>
+<field name="model">jugador.turneo</field>
+<field name="arch" type="xml">
+<tree>
+<field name="nombreTurneo"/>
+<field name="tipoTurneo"/>
+<field name="descripcionTurneo"/>
+<field name="fechaInicio"/>
+<field name="fechaFin"/>
+</tree>
+</field>
+</record>
+<record model="ir.actions.act_window" id="jugador.Jugador_action_window">
+<field name="name">Jugadores</field>
+<field name="res_model">jugador.jugador</field>
+<field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="jugador.equipo_action_window">
+<field name="name">Equipos</field>
+<field name="res_model">jugador.equipo</field>
+<field name="view_mode">tree,form</field>
+</record>
+<record model="ir.actions.act_window" id="jugador.turneo_action_window">
+<field name="name">Turneos</field>
+<field name="res_model">jugador.turneo</field>
+<field name="view_mode">tree,form</field>
+</record>
+<menuitem name="Turneos" id="jugador.menu_root" web_icon="jugador,static/description/icon.png"/>
+<menuitem name="Jugadores" id="jugador.jugador_menu" parent="jugador.menu_root" action="jugador.jugador_action_window"/>
+<menuitem name="Equipo" id="jugador.equipo_menu" parent="jugador.menu_root" action="jugador.equipo_action_window"/>
+<menuitem name="Turneos" id="jugador.turneo_menu" parent="jugador.menu_root" action="jugador.turneo_action_window"/>
+</data>
 </odoo>
