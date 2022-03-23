@@ -29,8 +29,7 @@
         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
-        'report/competencia_empleados_report.xml',
-        'report/competencia_emplCompetencia_report.xml',
+        
     ],
     # only loaded in demonstration mode
     'demo': [
