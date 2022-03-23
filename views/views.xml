@@ -61,18 +61,18 @@
       <field name="model">jugador.jugador</field>
       <field name="arch" type="xml">
 <tree>
-<field name="dniJugador"/>
-<field name="nombreJugador"/>
+<field name="dniEmpleado"/>
+<field name="nombreEmpleado"/>
 <field name="fechaNacimiento"/>
-<field name="direccionJugador"/>
-<field name="telefonoJugador"/>
+<field name="direccionEmpleado"/>
+<field name="telefonoEmpleado"/>
 </tree>
 </field>
 </record>
-<!--  VISTA JUGADORES FORMULARIO  -->
-<record model="ir.ui.view" id="jugador.jugador_view">
-<field name="name">jugador.jugador.view</field>
-<field name="model">jugador.jugador</field>
+<!--  VISTA EMPLEADOS FORMULARIO  -->
+<record model="ir.ui.view" id="jugador.empleado_view">
+<field name="name">jugador.empleado.view</field>
+<field name="model">jugador.empleado</field>
 <field name="arch" type="xml">
 <form>
 <sheet>
@@ -81,22 +81,22 @@
 </div>
 <group>
 <group>
-<h1>VISTA JUGADORES</h1>
+<h1>VISTA EMPLEADOS</h1>
 </group>
 </group>
 <notebook>
 <page string="Page1">
 <group col="3">
 <group>
-<field name="dniJugador" style="width:70%%"/>
+<field name="dniEmpleado" style="width:70%%"/>
 </group>
 <group>
-<field name="nombreJugador" style="width:170%%"/>
+<field name="nombreEmpleado" style="width:170%%"/>
 </group>
 </group>
 <group col="2">
 <group>
-<field name="direccionJugador"/>
+<field name="direccionEmpleado"/>
 </group>
 </group>
 <group col="3">
@@ -104,7 +104,7 @@
 <field name="fechaNacimiento"/>
 </group>
 <group>
-<field name="telefonoJugador"/>
+<field name="telefonoEmpleado"/>
 </group>
 </group>
 </page>
@@ -128,23 +128,23 @@
 </tree>
 </field>
 </record>
-<!--  VISTA TORNEO  -->
-<record model="ir.ui.view" id="jugador.torneo_list_view">
-<field name="name">jugador.torneo.view.tree</field>
-<field name="model">jugador.torneo</field>
+<!--  VISTA COMPETICIA -->
+<record model="ir.ui.view" id="jugador.competicia_list_view">
+<field name="name">jugador.competicia.view.tree</field>
+<field name="model">jugador.competicia</field>
 <field name="arch" type="xml">
 <tree>
-<field name="nombreTorneo"/>
-<field name="tipoTorneo"/>
-<field name="descripcionTorneo"/>
+<field name="nombreCompeticia"/>
+<field name="tipoCompeticia"/>
+<field name="descripcionCompeticia"/>
 <field name="fechaInicio"/>
 <field name="fechaFin"/>
 </tree>
 </field>
 </record>
-<record model="ir.actions.act_window" id="jugador.Jugador_action_window">
-<field name="name">Jugadores</field>
-<field name="res_model">jugador.jugador</field>
+<record model="ir.actions.act_window" id="jugador.empleado_action_window">
+<field name="name">Empleados</field>
+<field name="res_model">jugador.empleado</field>
 <field name="view_mode">tree,form</field>
 </record>
 <record model="ir.actions.act_window" id="jugador.equipo_action_window">
@@ -152,14 +152,14 @@
 <field name="res_model">jugador.equipo</field>
 <field name="view_mode">tree,form</field>
 </record>
-<record model="ir.actions.act_window" id="jugador.torneo_action_window">
-<field name="name">Torneos</field>
-<field name="res_model">jugador.torneo</field>
+<record model="ir.actions.act_window" id="jugador.competicia_action_window">
+<field name="name">Competicias</field>
+<field name="res_model">jugador.competicia</field>
 <field name="view_mode">tree,form</field>
 </record>
-<menuitem name="Torneos" id="jugador.menu_root" web_icon="jugador,static/description/icon.png"/>
-<menuitem name="Jugadores" id="jugador.jugador_menu" parent="jugador.menu_root" action="jugador.jugador_action_window"/>
+<menuitem name="Competicias" id="jugador.menu_root" web_icon="jugador,static/description/icon.png"/>
+<menuitem name="Empleados" id="jugador.empleado_menu" parent="jugador.menu_root" action="jugador.empleado_action_window"/>
 <menuitem name="Equipo" id="jugador.equipo_menu" parent="jugador.menu_root" action="jugador.equipo_action_window"/>
-<menuitem name="Torneos" id="jugador.torneo_menu" parent="jugador.menu_root" action="jugador.torneo_action_window"/>
+<menuitem name="Competicias" id="jugador.competicia_menu" parent="jugador.menu_root" action="jugador.competicia_action_window"/>
 </data>
 </odoo>
