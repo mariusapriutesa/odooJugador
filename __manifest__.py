@@ -4,7 +4,7 @@
 
     'summary': """
         En este modulo podemos designar diferentes jugadores
-        subtitle on modules listing or apps.openerp.com""",
+        """,
 
     'description': """
         Este modolo fue creado para gestionar los jugadores
@@ -25,8 +25,12 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
+       'security/jugador_security.xml',
+        'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'report/competencia_empleados_report.xml',
+        'report/competencia_emplCompetencia_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

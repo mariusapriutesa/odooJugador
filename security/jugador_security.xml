@@ -1,0 +1,20 @@
+<odoo>
+<data>
+<record model="ir.module.category" id="jugador.module_category_jugador">
+<field name="name">Jugador</field>
+<field name="description">Gestion y asignacion de jugadores</field>
+</record>
+<record model="res.groups" id="group_jugador_role2">
+<field name="name">role2</field>
+<field name="category_id" ref="jugador.module_category_jugador"/>
+<field name="comment">role2</field>
+</record>
+<record model="res.groups" id="group_jugador_role1">
+<field name="name">role1</field>
+<field name="category_id" ref="jugador.module_category_jugador"/>
+<field name="comment">role1</field>
+<field name="implied_ids" eval="[(4, ref('group_jugador_role2'))]"/>
+<field name="users" eval="[(4, ref('base.user_root')),(4, ref('base.user_admin'))]"/>
+</record>
+</data>
+</odoo>
