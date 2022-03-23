@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "jugador",
+    'name': "Proyecto jugadores",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
+        En este modulo podemos designar diferentes jugadores
         subtitle on modules listing or apps.openerp.com""",
 
     'description': """
-        Long description of module's purpose
+        Este modolo fue creado para gestionar los jugadores
     """,
 
     'author': "Marius Apriutesa",
